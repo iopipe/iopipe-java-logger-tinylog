@@ -1,10 +1,13 @@
 package com.iopipe.logger.tinylog;
 
+import org.iopipe.plugin.logger.LoggerUtil;
 import org.pmw.tinylog.Configuration;
 import org.pmw.tinylog.LogEntry;
 import org.pmw.tinylog.writers.LogEntryValue;
 import org.pmw.tinylog.writers.Writer;
+import java.util.HashSet;
 import java.util.Set;
+import java.sql.Timestamp;
 
 /**
  * This writer supports writing to IOpipe.
@@ -41,7 +44,7 @@ public final class IOpipeWriter
 	@Override
 	public final Set<LogEntryValue> getRequiredLogEntryValues()
 	{
-		throw new Error("TODO");
+		return new HashSet<>();
 	}
 	
 	/**
@@ -52,7 +55,6 @@ public final class IOpipeWriter
 	public final void init(Configuration __conf)
 		throws Exception
 	{
-		throw new Error("TODO");
 	}
 	
 	/**
@@ -63,7 +65,16 @@ public final class IOpipeWriter
 	public final void write(LogEntry __e)
 		throws Exception
 	{
-		throw new Error("TODO");
+		if (__e == null)
+			return;
+		
+		Timestamp time = __e.getTimestamp();
+		
+		LoggerUtil.log(
+			(time == null ? System.currentTimeMillis() : time.getTime()),
+			__e.getLevel(),
+			__e.getClassName() + "." + __e.getMethodName(),
+			__e.getMessage());
 	}
 }
 
