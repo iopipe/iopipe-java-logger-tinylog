@@ -51,6 +51,7 @@ workflows:
           filters:
             tags:
               only:
-                - ^\d\.\d\.\d\w{0,5}$
                 - ^test\d$
+
+#                - ^\d\.\d\.\d\w{0,5}$
 
