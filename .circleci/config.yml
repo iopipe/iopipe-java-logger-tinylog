@@ -51,10 +51,10 @@ workflows:
           filters:
             tags:
               only:
-                - ^test\d$
+                - /^test\d$/
             branches:
               ignore:
                 - /.*/
 
-#                - ^\d\.\d\.\d\w{0,5}$
+#                - /^\d\.\d\.\d\w{0,5}$/
 
