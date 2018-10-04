@@ -52,6 +52,9 @@ workflows:
             tags:
               only:
                 - ^test\d$
+            branches:
+              ignore:
+                - /.*/
 
 #                - ^\d\.\d\.\d\w{0,5}$
 
