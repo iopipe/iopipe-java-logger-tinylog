@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <version>${revision}</version>
   <properties>
-      <revision>1.0</revision>
+      <revision>0.0.0</revision>
   </properties>
   <name>IOpipe Java TinyLog Logger Adapter</name>
   <url>https://www.iopipe.com/</url>
@@ -16,8 +16,9 @@
   </scm>
   <distributionManagement>
     <repository>
-      <id>artifact-repository</id>
-      <url>https://github.com/iopipe/iopipe-java-logger-tinylog</url>
+      <!-- Change this to use our standard releasing thing. -->
+      <id>file</id>
+      <url>file:///tmp/iopipe-java-logger-tinylog</url>
     </repository>
   </distributionManagement>
   <licenses>
@@ -58,7 +59,7 @@
         <artifactId>maven-scm-plugin</artifactId>
         <version>1.9.4</version>
         <configuration>
-          <tag>v${project.version}</tag>
+          <tag>${project.version}</tag>
         </configuration>
       </plugin>
     </plugins>
