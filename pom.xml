@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.iopipe</groupId>
+  <artifactId>iopipe-logger-tinylog</artifactId>
+  <packaging>jar</packaging>
+  <version>${revision}</version>
+  <properties>
+      <revision>1.0</revision>
+  </properties>
+  <name>IOpipe Java TinyLog Logger Adapter</name>
+  <url>https://www.iopipe.com/</url>
+  <scm>
+  	<connection>scm:git:https://github.com/iopipe/iopipe-java-logger-tinylog</connection>
+    <url>https://github.com/iopipe/iopipe-java-logger-tinylog</url>
+  </scm>
+  <distributionManagement>
+    <repository>
+      <id>artifact-repository</id>
+      <url>https://github.com/iopipe/iopipe-java-logger-tinylog</url>
+    </repository>
+  </distributionManagement>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+  <organization>
+    <name>IOpipe</name>
+    <url>https://www.iopipe.com/</url>
+  </organization>
+  <description>
+    This project contains the adapter for TinyLog so that logging events
+    are captured and uploaded to IOpipe.
+  </description>
+  <dependencies>
+    <dependency>
+      <groupId>com.iopipe</groupId>
+      <artifactId>iopipe</artifactId>
+      <version>1.9.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-scm-plugin</artifactId>
+        <version>1.9.4</version>
+        <configuration>
+          <tag>v${project.version}</tag>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
