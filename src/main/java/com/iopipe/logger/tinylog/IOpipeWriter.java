@@ -1,6 +1,6 @@
 package com.iopipe.logger.tinylog;
 
-import org.iopipe.plugin.logger.LoggerUtil;
+import com.iopipe.plugin.logger.LoggerUtil;
 import org.pmw.tinylog.Configuration;
 import org.pmw.tinylog.LogEntry;
 import org.pmw.tinylog.writers.LogEntryValue;
