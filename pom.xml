@@ -19,6 +19,7 @@
       <!-- Change this to use our standard releasing thing. -->
       <id>file</id>
       <url>file:///tmp/iopipe-java-logger-tinylog</url>
+      <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
     </repository>
   </distributionManagement>
   <licenses>
