@@ -5,9 +5,9 @@ import org.pmw.tinylog.Configuration;
 import org.pmw.tinylog.LogEntry;
 import org.pmw.tinylog.writers.LogEntryValue;
 import org.pmw.tinylog.writers.Writer;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.sql.Timestamp;
 
 /**
  * This writer supports writing to IOpipe.
@@ -68,8 +68,7 @@ public final class IOpipeWriter
 		if (__e == null)
 			return;
 		
-		Timestamp time = __e.getTimestamp();
-		
+		Date time = __e.getDate();
 		LoggerUtil.log(
 			(time == null ? System.currentTimeMillis() : time.getTime()),
 			__e.getLevel(),
