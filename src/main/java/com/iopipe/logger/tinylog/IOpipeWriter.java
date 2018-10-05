@@ -6,6 +6,7 @@ import org.pmw.tinylog.LogEntry;
 import org.pmw.tinylog.writers.LogEntryValue;
 import org.pmw.tinylog.writers.Writer;
 import java.util.Date;
+import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,7 +45,13 @@ public final class IOpipeWriter
 	@Override
 	public final Set<LogEntryValue> getRequiredLogEntryValues()
 	{
-		return new HashSet<>();
+		return EnumSet.<LogEntryValue>of(LogEntryValue.CLASS,
+			LogEntryValue.DATE,
+			LogEntryValue.LEVEL,
+			LogEntryValue.MESSAGE,
+			LogEntryValue.METHOD,
+			LogEntryValue.PRECISE_DATE,
+			LogEntryValue.RENDERED_LOG_ENTRY);
 	}
 	
 	/**
@@ -68,12 +75,16 @@ public final class IOpipeWriter
 		if (__e == null)
 			return;
 		
+		String m = __e.getMessage();
+		if (m == null)
+			m = __e.getRenderedLogEntry​();
+		
 		Date time = __e.getDate();
 		LoggerUtil.log(
 			(time == null ? System.currentTimeMillis() : time.getTime()),
 			__e.getLevel(),
 			__e.getClassName() + "." + __e.getMethodName(),
-			__e.getMessage());
+			m);
 	}
 }
 
