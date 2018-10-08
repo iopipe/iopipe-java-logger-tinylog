@@ -23,7 +23,7 @@ public class TinyLogTest
 	public void test()
 	{
 		// Activate writer
-		Configurator.currentConfig().writer(new IOpipeWriter()).activate();
+		//Configurator.currentConfig().writer(new IOpipeWriter()).activate();
 		
 		IOpipeService.instance().<Object>run(new MockContext("tinylog-test"),
 			(__exec) ->

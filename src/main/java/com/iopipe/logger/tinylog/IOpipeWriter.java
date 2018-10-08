@@ -4,6 +4,7 @@ import com.iopipe.plugin.logger.LoggerUtil;
 import org.pmw.tinylog.Configuration;
 import org.pmw.tinylog.LogEntry;
 import org.pmw.tinylog.writers.LogEntryValue;
+import org.pmw.tinylog.writers.PropertiesSupport;
 import org.pmw.tinylog.writers.Writer;
 import java.util.Date;
 import java.util.EnumSet;
@@ -15,6 +16,7 @@ import java.util.Set;
  *
  * @since 2018/10/04
  */
+@PropertiesSupport(name="iopipe", properties={})
 public final class IOpipeWriter
 	implements Writer
 {
