@@ -56,7 +56,7 @@ If you wish to manually initialize the logger from your Java code, you may
 use the following imports:
 
 ```java
-import new com.iopipe.logger.tinylog.IOpipeWriter;
+import com.iopipe.logger.tinylog.IOpipeWriter;
 import org.pmw.tinylog.Configurator;
 ```
 
