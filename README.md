@@ -20,9 +20,49 @@ Your `pom.xml` file may be modified to include the following dependency:
 </dependency>
 ```
 
+Note that if you are using multiple TinyLog plugins from multiple repositories
+you will need to merge the services, this can be done by following the
+[service resource transformer for shading](https://maven.apache.org/plugins/maven-shade-plugin/examples/resource-transformers.html#ServicesResourceTransformer) documentation.
+
 # Configuration
 
 The adapter is configured using the same method as the documentation for
 [Configuring TinyLog](https://tinylog.org/configuration).
 
+## `tinylog.properties` Resource
+
+This resource will exist at the base of the JAR and it should contain the
+following:
+
+```
+tinylog.writer = iopipe
+```
+
+This is the recommended way to use the logger.
+
+## System properties
+
+If you are able to set system properties for the Java virtual machine you may
+use the following, note that this will likely not work if properties are set
+at run-time:
+
+```
+-Dtinylog.writer=iopipe
+```
+
+## Manual Initialization From Java Code
+
+If you wish to manually initialize the logger from your Java code, you may
+use the following imports:
+
+```java
+import new com.iopipe.logger.tinylog.IOpipeWriter;
+import org.pmw.tinylog.Configurator;
+```
+
+Then in a static initializer or appropriate method you may then use:
+
+```java
+Configurator.currentConfig().writer(new IOpipeWriter()).activate();
+```
 
