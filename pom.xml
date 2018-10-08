@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <version>${revision}</version>
   <properties>
-      <revision>0.0.0</revision>
+      <revision>1.0.0</revision>
   </properties>
   <name>IOpipe Java TinyLog Logger Adapter</name>
   <url>https://www.iopipe.com/</url>
@@ -14,14 +14,6 @@
   	<connection>scm:git:https://github.com/iopipe/iopipe-java-logger-tinylog</connection>
     <url>https://github.com/iopipe/iopipe-java-logger-tinylog</url>
   </scm>
-  <distributionManagement>
-    <repository>
-      <!-- Change this to use our standard releasing thing. -->
-      <id>file</id>
-      <url>file:///tmp/iopipe-java-logger-tinylog</url>
-      <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-    </repository>
-  </distributionManagement>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -47,7 +39,7 @@
     <dependency>
       <groupId>com.iopipe</groupId>
       <artifactId>iopipe</artifactId>
-      <version>1.9.0-SNAPSHOT</version>
+      <version>1.9.0</version>
     </dependency>
     
     <dependency>
@@ -75,16 +67,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  
-  <!-- Remove -->
-  <repositories>
+  <distributionManagement>
     <repository>
-      <id>repo-local</id>
-      <url>file:./.dist</url>
+      <id>bintray</id>
+      <name>bintray</name>
+      <url>https://api.bintray.com/maven/${env.BINTRAY_REPO_OWNER}/${env.BINTRAY_REPO}/${project.artifactId}/;publish=1
+      </url>
     </repository>
-  </repositories>
-  <!-- XXXXXX -->
-  
+  </distributionManagement>
   <build>
     <plugins>
       <plugin>
