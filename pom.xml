@@ -67,6 +67,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>bintray-iopipe-maven</id>
+      <name>bintray</name>
+      <url>https://dl.bintray.com/iopipe/iopipe</url>
+    </repository>
+  </repositories>
   <distributionManagement>
     <repository>
       <id>bintray</id>
