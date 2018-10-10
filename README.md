@@ -16,7 +16,6 @@ Your `pom.xml` file may be modified to include the following dependency:
 <dependency>
   <groupId>com.iopipe</groupId>
   <artifactId>iopipe-logger-tinylog</artifactId>
-  <version>1.0.0</version>
 </dependency>
 ```
 
