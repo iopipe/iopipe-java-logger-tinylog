@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <version>${revision}</version>
   <properties>
-      <revision>1.0.3</revision>
+      <revision>1.1.0</revision>
   </properties>
   <name>IOpipe Java TinyLog Logger Adapter</name>
   <url>https://www.iopipe.com/</url>
@@ -39,6 +39,7 @@
     This project contains the adapter for TinyLog so that logging events
     are captured and uploaded to IOpipe.
   </description>
+  
   <dependencies>
     <dependency>
       <groupId>org.tinylog</groupId>
@@ -86,15 +87,36 @@
       <url>https://dl.bintray.com/iopipe/iopipe</url>
     </repository>
   </repositories>
-  <distributionManagement>
-    <repository>
-      <id>bintray</id>
-      <name>bintray</name>
-      <url>https://api.bintray.com/maven/iopipe/iopipe-logger-tinylog/iopipe-logger-tinylog/;publish=1</url>
-    </repository>
-  </distributionManagement>
+  
   <build>
     <plugins>
+      <!-- Used to make it so the JavaDoc and sources are included. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- End of sources/javadoc inclusion. -->
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
