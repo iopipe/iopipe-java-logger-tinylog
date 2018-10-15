@@ -90,8 +90,7 @@
     <repository>
       <id>bintray</id>
       <name>bintray</name>
-      <url>https://api.bintray.com/maven/iopipe/iopipe-logger-tinylog/iopipe-logger-tinylog/;publish=1
-      </url>
+      <url>https://api.bintray.com/maven/iopipe/iopipe-logger-tinylog/iopipe-logger-tinylog/;publish=1</url>
     </repository>
   </distributionManagement>
   <build>
