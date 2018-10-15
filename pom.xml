@@ -6,14 +6,23 @@
   <packaging>jar</packaging>
   <version>${revision}</version>
   <properties>
-      <revision>1.0.2</revision>
+      <revision>1.0.3</revision>
   </properties>
   <name>IOpipe Java TinyLog Logger Adapter</name>
   <url>https://www.iopipe.com/</url>
   <scm>
   	<connection>scm:git:https://github.com/iopipe/iopipe-java-logger-tinylog</connection>
     <url>https://github.com/iopipe/iopipe-java-logger-tinylog</url>
+    <tag>${revision}</tag>
   </scm>
+  <developers>
+   <developer>
+     <name>IOpipe</name>
+     <email>dev@iopipe.com</email>
+     <organization>IOpipe</organization>
+     <organizationUrl>https://www.iopipe.com</organizationUrl>
+   </developer>
+ </developers>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
