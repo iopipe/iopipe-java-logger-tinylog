@@ -6,7 +6,7 @@
   <packaging>jar</packaging>
   <version>${revision}</version>
   <properties>
-      <revision>1.1.0</revision>
+      <revision>1.2.0</revision>
   </properties>
   <name>IOpipe Java TinyLog Logger Adapter</name>
   <url>https://www.iopipe.com/</url>
